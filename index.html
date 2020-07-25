@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Curso de Java Script</title>
+</head>
+<body>
+    <header>
+        <h1>Edgar Gonzalo Yunga</h1>
+        <p>Desarrollador Web y Diseño Gráfico</p>
+    </header>
+    <section>
+        <div class="platillos">
+            <p>Mote</p>
+            <p>Habas</p>
+            <p>Frejol</p>
+            <p>Lenteja</p>
+        </div>
+
+        <button id="boton">
+            ¡Pulsame!
+        </button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim quod doloribus blanditiis facere fugit debitis quos tempore rem? Consequatur temporibus accusamus aliquam minus, assumenda quam. Dicta quaerat porro itaque?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim quod doloribus blanditiis facere fugit debitis quos tempore rem? Consequatur temporibus accusamus aliquam minus, assumenda quam. Dicta quaerat porro itaque?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim quod doloribus blanditiis facere fugit debitis quos tempore rem? Consequatur temporibus accusamus aliquam minus, assumenda quam. Dicta quaerat porro itaque?</p>
+
+    </section>
+    <script>
+        var boton = document.getElementById('boton');
+        var boton = document.getElementById('boton');
+        boton.addEventListener('click',function(){
+            //console.log(window.location.href);
+            //window.location.href = 'https://www.google.com';
+        })
+
+        /** 
+         * PROPIEDADES Y METODOS DEL DOM Y BOM
+         * 
+        */
+
+        var obteniendoParrafos = document.getElementsByTagName('p');
+        var obteniendotexto = document.getElementsByClassName('platillos')[0];
+
+        boton.addEventListener('click',function(){
+            //console.log(obteniendotexto);
+            boton.style.background = "red";
+            boton.style.color = "white";
+            boton.style.borderRadius = '5px';
+            boton.style.width = '200px';
+
+        });
+
+        var foto = document.createElement('img');
+        foto.src ="img/location.png";
+        foto.width= 200;
+        foto.name= "foto1";
+        document.body.appendChild(foto);
+
+        // foto.addEventListener('click',function(){
+        //     if(foto.name == "foto1"){
+        //         foto.src = "img/images.png";
+        //         foto.name = "foto2";
+        //     }else{
+        //         foto.src = "img/location.png";
+        //         foto.name = "foto1";
+        //     }
+        // });
+
+        foto.addEventListener('mouseover',function(){
+            foto.src = "img/images.png";
+            foto.width = 300;
+        });
+        foto.addEventListener('mouseout',function(){
+            foto.src = "img/location.png";
+            foto.width = 200;
+        });
+
+        localStorage.setItem("Contraseña","La contraseña es 12345");
+        boton.addEventListener('click',function(){
+            var contra = localStorage.getItem("Contraseña");
+            // Cambiar el texto obtenido siempre y cuando no se incluya el atributo .textContent en las obtencion de datos.
+            obteniendotexto.innerHTML = contra ;
+
+            window.history.forward(); // avanza en el historico o historial
+            window.history.back(); // regresa en el historico
+            window.history.go(3);// Te envia a la pagina del historico
+        });
+    </script>
+</body>
+</html>
